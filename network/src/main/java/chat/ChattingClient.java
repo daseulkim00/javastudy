@@ -14,7 +14,7 @@ public class ChattingClient {
 	private static final String SERVER_IP = "127.0.0.1";
 	private static final int SERVER_PORT = 9999;
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 		Scanner scanner = null;
 		Socket socket = null;
@@ -29,8 +29,10 @@ public class ChattingClient {
 
 			// 4. reader/writer 생성
 			BufferedReader response = new BufferedReader(new InputStreamReader(socket.getInputStream(), "utf-8"));
+			// 값을 읽어드림
 			PrintWriter request = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "utf-8"), true);
-
+			// 값을 밖으로 보냄
+			
 			// 5. join 프로토콜
 			System.out.print("닉네임>>");
 			String nickname = scanner.nextLine();
@@ -58,7 +60,7 @@ public class ChattingClient {
 		} catch (IOException e) {
 			log("[client] error: " + e);
 		} finally {
-			
+
 			if (socket != null && socket.isClosed() == false) {
 				try {
 					socket.close();

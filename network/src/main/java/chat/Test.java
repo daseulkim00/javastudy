@@ -7,6 +7,8 @@ public class Test extends Thread{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
+		
+	    // 메롱
 		super.run();
 	}
 
